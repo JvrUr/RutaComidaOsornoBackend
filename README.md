@@ -1,6 +1,6 @@
-# OsornoGourmet API - Backend
+# OsornoGourmet - Backend
 
-API RESTful para la aplicación OsornoGourmet, una guía gastronómica de la ciudad de Osorno. Desarrollada en Kotlin con el framework Ktor.
+Backend para la aplicación OsornoGourmet, una guía gastronómica de la ciudad de Osorno. Desarrollada en Kotlin con el framework Ktor.
 
 ## Tecnologías
 
@@ -48,37 +48,8 @@ src/main/kotlin/osornogourmet/
     └── RouteService.kt            # Lógica de rutas gastronómicas
 ```
 
-## Endpoints
-
-### Autenticación
-| Método | Ruta                | Descripción          | Protegido |
-|--------|---------------------|----------------------|-----------|
-| POST   | `/api/auth/register`| Registrar usuario    | No        |
-| POST   | `/api/auth/login`   | Iniciar sesión       | No        |
-
-### Locales de Comida
-| Método | Ruta                             | Descripción               | Protegido |
-|--------|----------------------------------|---------------------------|-----------|
-| GET    | `/api/food-places`               | Listar todos los locales  | No        |
-| GET    | `/api/food-places/{id}`          | Obtener local por ID      | No        |
-| GET    | `/api/food-places/category/{cat}`| Filtrar por categoría     | No        |
-| POST   | `/api/food-places/batch`         | Obtener varios por IDs    | No        |
-| POST   | `/api/food-places`               | Crear local               | Sí (JWT)  |
-| PUT    | `/api/food-places/{id}`          | Actualizar local          | Sí (JWT)  |
-| DELETE | `/api/food-places/{id}`          | Eliminar local            | Sí (JWT)  |
-
-### Rutas Gastronómicas
-| Método | Ruta               | Descripción           | Protegido |
-|--------|--------------------|-----------------------|-----------|
-| GET    | `/api/routes`      | Listar todas las rutas| No        |
-| GET    | `/api/routes/{id}` | Obtener ruta por ID   | No        |
-| POST   | `/api/routes`      | Crear ruta            | Sí (JWT)  |
-| PUT    | `/api/routes/{id}` | Actualizar ruta       | Sí (JWT)  |
-| DELETE | `/api/routes/{id}` | Eliminar ruta         | Sí (JWT)  |
-
 ## Base de Datos (Neon - PostgreSQL)
 
-Las tablas están definidas en español:
 
 - **`usuarios`** — correo, nombre, contrasena_hash
 - **`lugares_comida`** — nombre, descripcion, categoria, direccion, latitud, longitud, calificacion, url_imagen, creado_por_usuario_id
